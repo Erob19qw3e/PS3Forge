@@ -1,0 +1,24 @@
+void main
+(
+	float3 vertexPosition : POSITION,
+	float3 vertexNormal : NORMAL,
+	float2 vertexTexcoord : TEXCOORD0,
+	
+	uniform float4x4 projMatrix,
+	uniform float4x4 modelViewMatrix,
+	uniform float4 diffuseColor,
+	uniform float4 fogParams,
+	
+	out float4 ePosition : POSITION,
+	out float4 oColor : COLOR0,
+	out float2 oTexcoord : TEXCOORD0,
+	out float oFog : TEXCOORD1
+)
+{
+	ePosition = mul(mul(projMatrix,modelViewMatrix),float4(vertexPosition,1.0f));
+	
+	float light = .55f + .45f*max(dot(normalize(vertexNormal),normalize(float3(.3f,.8f,.5f))),0.0f);
+	oColor = float4(diffuseColor.xyz*light,1.0f);
+	oTexcoord = vertexTexcoord;
+	oFog = (ePosition.w-fogParams.x)*fogParams.y;
+}

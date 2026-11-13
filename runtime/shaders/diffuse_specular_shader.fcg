@@ -1,0 +1,7 @@
+void main(float4 color : COLOR0, float2 texcoord : TEXCOORD0, float fog : TEXCOORD1,
+          uniform sampler2D texture : TEXUNIT0, out float4 oColor : COLOR0)
+{
+    float4 texel=tex2D(texture,texcoord);
+    clip(texel.a-0.45f);
+    oColor = float4(texel.xyz*color.xyz*(1.0f-saturate(fog)),1.0f);
+}
