@@ -4,7 +4,7 @@ PS3Forge is a Windows editor and open-source tool for people who want to create 
 
 > My dream became a reality thanks to ChatGPT.
 
-Create scenes, import models, and script gameplay with Visual Blocks or C++. The visual editor is designed for 3D. You can also create 2D games by writing your own rendering and gameplay code in C++. Build with the PSL1GHT toolchain and test your own homebrew in RPCS3 or on a compatible PS3.
+Create scenes, import models, and script gameplay with Visual Blocks or C++. The visual editor is designed for 3D. You can also create 2D games by writing your own rendering and gameplay code in C++. Build with a better version of PSL1GHT toolchain and test your own homebrew in RPCS3 or on a compatible PS3.
 
 ## Run from source
 
